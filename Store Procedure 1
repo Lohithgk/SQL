@@ -1,0 +1,14 @@
+USE AdventureWorks
+GO
+
+IF EXISTS
+( SELECT *
+    FROM INFORMATION_SCHEMA.ROUTINES
+    WHERE SPECIFIC_SCHEMA = N'dbo'
+            AND SPECIFIC_NAME = N'NIKE_US_V2'
+            AND ROUTINE_TYPE  = N'PROCEDURE'
+)
+
+BEGIN
+   PRINT 'Store procedure NIKE_US_V2 exists'
+END
