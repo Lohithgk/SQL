@@ -1,5 +1,4 @@
 /*
-
 Managers with at Least 5 Direct Reports
 
 +-------------+---------+
@@ -27,25 +26,23 @@ Input: Employee table:
 | 105 | Anne  | A          | 101       |
 | 106 | Ron   | B          | 101       |
 +-----+-------+------------+-----------+
+
 Output: 
 +------+
 | name |
 +------+
 | John |
-+------+ */
++------+ 
+*/
 
 -- Solution:--
 
-with t1 as
-    (
-        select managerid, count(name) as total
-        from employee
-        group by managerid
-    )
+with t1 as (
+            select managerid, count(name) as total
+            from employee
+            group by managerid)
 
-select
-    e.name
+select e.name
 from t1
-    join employee e
-    on t1.managerid = e.id
+    join employee e on t1.managerid = e.id
 where t1.total >= 5
