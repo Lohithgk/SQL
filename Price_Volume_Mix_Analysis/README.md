@@ -1,6 +1,7 @@
 # Price, Volume, and Mix Analysis SQL Script
 
-This repository contains a SQL script that performs a comprehensive **Price, Volume, and Mix (PVM) Analysis** for all clients. The script is designed for use in a data warehouse or business intelligence environment
+This repository contains a SQL script that performs a comprehensive **Price, Volume, and Mix (PVM) Analysis** for all clients. 
+The script is designed for use in a data warehouse or business intelligence environment
 
 ## Overview
 
@@ -37,12 +38,6 @@ The final output is stored in `dbo.tbl_Sales_Impact` and includes:
 - Sales metrics for current and previous years
 - Calculated impacts (Price, Volume, Mix)
 - New and discontinued product sales
-
-## Usage
-
-1. Update the database context (`USE TempDB`) if needed.
-2. Ensure the source tables (`Sales_Data`, `Derived_Variables`, `Client_Master`) are populated.
-3. Run the script in a SQL Server environment.
 
 ## Disclaimer
 
