@@ -30,7 +30,7 @@ DECLARE @PrevYear AS INT = @CurrYear - 1
         SUM(S.[Sales_Quantity]) AS Curr_Sales_Quantity,
         SUM(CASE WHEN S.[Record_Type] = 'Misc' THEN S.[Sales_Amount] ELSE 0 END) AS Curr_Misc_Sales
     FROM [TempDB].[dbo].[Sales_Data] S
-    WHERE ISNULL(S.[Category_ID], 0) NOT IN (17, 18) AND S.[Fiscal_Year] = @CurrYear
+    WHERE ISNULL(S.[Category_ID], 0) NOT IN (20, 21) AND S.[Fiscal_Year] = @CurrYear
     GROUP BY S.[Client_ID], S.[Category_Code], S.[Category_Desc], S.[Product_Code], S.[Fiscal_Month], S.[Fiscal_Year]
 )
 ---------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ DECLARE @PrevYear AS INT = @CurrYear - 1
         SUM(S.[Sales_Quantity]) AS Prev_Sales_Quantity,
         SUM(CASE WHEN S.[Record_Type] = 'Misc' THEN S.[Sales_Amount] ELSE 0 END) AS Prev_Misc_Sales
     FROM [TempDB].[dbo].[Sales_Data] S
-    WHERE ISNULL(S.[Category_ID], 0) NOT IN (17, 18) AND S.[Fiscal_Year] = @PrevYear AND S.[Date_Key] <= @PrevYearMaxDate
+    WHERE ISNULL(S.[Category_ID], 0) NOT IN (20, 21) AND S.[Fiscal_Year] = @PrevYear AND S.[Date_Key] <= @PrevYearMaxDate
     GROUP BY S.[Client_ID], S.[Category_Code], S.[Category_Desc], S.[Product_Code], S.[Fiscal_Month], S.[Fiscal_Year]
 )
 ---------------------------------------------------------------------------------------------------
