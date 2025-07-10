@@ -5,7 +5,7 @@ The script is designed for use in a data warehouse or business intelligence envi
 
 ## Overview
 
-The script extracts, transforms, and loads (ETL) sales data to compute year-over-year (YoY) changes in sales, broken down into:
+The script compute year-over-year (YoY) changes in sales, broken down into:
 - **Price Impact**
 - **Volume Impact**
 - **Mix Impact**
