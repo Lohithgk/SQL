@@ -18,8 +18,7 @@ DECLARE @CurrYear AS INT = (SELECT Fiscal_Year FROM [TempDB].[dbo].[Derived_Vari
 DECLARE @PrevYear AS INT = @CurrYear - 1
 ---------------------------------------------------------------------------------------------------
 -- Price, Volume, Mix Analysis for All Clients --
-;WITH CurrYearData AS 
-(
+;WITH CurrYearData AS (
     SELECT 
         S.[Client_ID],
         CONCAT(S.[Category_Code], '-', S.[Category_Desc]) AS [Category],
@@ -34,8 +33,7 @@ DECLARE @PrevYear AS INT = @CurrYear - 1
     GROUP BY S.[Client_ID], S.[Category_Code], S.[Category_Desc], S.[Product_Code], S.[Fiscal_Month], S.[Fiscal_Year]
 )
 ---------------------------------------------------------------------------------------------------
-, PrevYearData AS 
-(
+, PrevYearData AS (
     SELECT 
         S.[Client_ID],
         CONCAT(S.[Category_Code], '-', S.[Category_Desc]) AS [Category],
